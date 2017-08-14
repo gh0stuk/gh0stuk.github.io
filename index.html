@@ -1,9 +1,12 @@
 ---
 # this is an empty front matter
 ---
-<html>
+<html
+    style="background:black;color:white;">
     <title>Ghost Gaming UK</title>
-    <head></head>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    </head>
     <body>
         <pre>
   ▄████  ██░ ██  ▒█████    ██████ ▄▄▄█████▓     ▄████  ▄▄▄       ███▄ ▄███▓ ██▓ ███▄    █   ▄████
@@ -17,18 +20,23 @@
       ░  ░  ░  ░    ░ ░        ░                    ░       ░  ░       ░    ░           ░       ░
 
         </pre>
-        <ul>
-            {% for result in site.data.results %}
-            <li>
-                {{ result.date }} | vs. {{ result.opponent }} | {{ result.map }} {{ result.ghost_score }} - {{ result.opponent_score }}
-                {% if result.result == "WIN"  %}
-                <span id="win" style="color:green">WIN</span>
-                {% else %}
-                <span id="lose" style="color:red">LOSE</span>
-                {% endif %}
-                ({{ result.league }})
-            </li>
-            {% endfor %}
-        </ul>
+        <div
+            id="container"
+            style="font-family: 'VT323', monospace">
+            <h1 style="color:#bd4bff">results</h1>
+            <ul>
+                {% for result in site.data.results %}
+                <li>
+                    {{ result.date }} | vs. {{ result.opponent }} | {{ result.map }} {{ result.ghost_score }} - {{ result.opponent_score }}
+                    {% if result.result == "WIN"  %}
+                    <span id="win" style="color:green">WIN</span>
+                    {% else %}
+                    <span id="lose" style="color:red">LOSE</span>
+                    {% endif %}
+                    ({{ result.league }})
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </body>
 </html>
