@@ -1,6 +1,23 @@
+---
+# this is an empty front matter
+---
 <html>
+    <title>Ghost Gaming UK</title>
     <head></head>
     <body>
-        Hello
+        Ghost Gaming UK
+        <ul>
+            {% for result in site.data.results %}
+            <li>
+                {{ result.date }} | {{ result.map }} {{ result.ghost_score }} - {{ result.opponent_score }}
+                {% if result.result == "WIN"  %}
+                <span id="win" style="color:green">WIN</span>
+                {% else %}
+                <span id="lose" style="color:red">LOSE</span>
+                {% endif %}
+                ({{ result.league }})
+            </li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
