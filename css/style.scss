@@ -1,0 +1,32 @@
+---
+---
+
+html {
+  background-color: #000;
+  color: #fff;
+}
+
+h1 {
+  color:#bd4bff;
+}
+
+// ---
+
+.container {
+  font-family: 'VT323', monospace;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.ascii-title {
+  text-align: center;
+  margin: 1em;
+}
+
+.win-result {
+  color: green;
+}
+
+.lose-result {
+  color: red;
+}

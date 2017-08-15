@@ -1,14 +1,15 @@
 ---
 # this is an empty front matter
 ---
-<html
-    style="background:black;color:white;">
+<html >
     <title>Ghost Gaming UK</title>
     <head>
         <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <pre>
+        <div class="ascii-title">
+            <pre>
   ▄████  ██░ ██  ▒█████    ██████ ▄▄▄█████▓     ▄████  ▄▄▄       ███▄ ▄███▓ ██▓ ███▄    █   ▄████
  ██▒ ▀█▒▓██░ ██▒▒██▒  ██▒▒██    ▒ ▓  ██▒ ▓▒    ██▒ ▀█▒▒████▄    ▓██▒▀█▀ ██▒▓██▒ ██ ▀█   █  ██▒ ▀█▒
 ▒██░▄▄▄░▒██▀▀██░▒██░  ██▒░ ▓██▄   ▒ ▓██░ ▒░   ▒██░▄▄▄░▒██  ▀█▄  ▓██    ▓██░▒██▒▓██  ▀█ ██▒▒██░▄▄▄░
@@ -19,19 +20,18 @@
 ░ ░   ░  ░  ░░ ░░ ░ ░ ▒  ░  ░  ░    ░         ░ ░   ░   ░   ▒   ░      ░    ▒ ░   ░   ░ ░ ░ ░   ░
       ░  ░  ░  ░    ░ ░        ░                    ░       ░  ░       ░    ░           ░       ░
 
-        </pre>
-        <div
-            id="container"
-            style="font-family: 'VT323', monospace">
-            <h1 style="color:#bd4bff">results</h1>
+            </pre>
+        </div>
+        <div class="container">
+            <h1>results</h1>
             <ul>
                 {% for result in site.data.results %}
                 <li>
                     {{ result.date }} | vs. {{ result.opponent }} | {{ result.map }} {{ result.ghost_score }} - {{ result.opponent_score }}
                     {% if result.result == "WIN"  %}
-                    <span id="win" style="color:green">WIN</span>
+                    <span class="win-result">WIN</span>
                     {% else %}
-                    <span id="lose" style="color:red">LOSE</span>
+                    <span class="lose-result">LOSE</span>
                     {% endif %}
                     ({{ result.league }})
                 </li>
