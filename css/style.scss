@@ -1,7 +1,7 @@
 ---
 ---
 
-html {
+html, body {
   background-color: #000;
   color: #fff;
 }
@@ -14,7 +14,6 @@ h1 {
 
 .container {
   font-family: 'VT323', monospace;
-  width: 60%;
   margin: 0 auto;
 }
 
@@ -38,4 +37,21 @@ h1 {
 
 li {
   font-size: 16px;
+}
+
+.flag {
+  width: 16px;
+}
+
+.content-about {
+  text-align: center;
+}
+
+.content-roster {
+  text-align: right;
+}
+
+.discord-link{
+  width: 48px;
+  margin: 1em;
 }

@@ -1,9 +1,15 @@
 ---
 # this is an empty front matter
 ---
-<html >
+<!DOCTYPE html>
+<html lang="en">
     <title>Ghost Gaming UK</title>
     <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
     </head>
@@ -12,28 +18,42 @@
             <img src="img/ghost_header.png">
         </div>
         <div class="container">
-            <h1>results</h1>
-            <ul>
-                {% for result in site.data.results %}
-                <li>
-                    {{ result.date }} | vs. {{ result.opponent }} | {{ result.map }} {{ result.ghost_score }} - {{ result.opponent_score }}
-                    {% if result.result == "WIN"  %}
-                    <span class="win-result">WIN</span>
-                    {% else %}
-                    <span class="lose-result">LOSE</span>
-                    {% endif %}
-                    ({{ result.league }})
-                </li>
-                {% endfor %}
-            </ul>
-            <h1>roster</h1>
-            <ul>
-                {% for member in site.data.roster %}
-                <li>
-                    {{ member.handle }}
-                </li>
-                {% endfor %}
-            </ul>
+            <div class="row">
+                <div class="col content-about">
+                    <h1>about</h1>
+                    <div>Welcome to Ghost Gaming UK</div>
+                    <a href="https://discord.gg/d89PArD">
+                        <img class="discord-link" src="https://discordapp.com/assets/28174a34e77bb5e5310ced9f95cb480b.png">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 content-results">
+                    <h1>results</h1>
+                    <ul>
+                        {% for result in site.data.results %}
+                        <li>
+                            {{ result.date }} | vs. {{ result.opponent }} | {{ result.map }} {{ result.ghost_score }} - {{ result.opponent_score }}
+                            {% if result.result == "WIN"  %}
+                            <span class="win-result">WIN</span>
+                            {% else %}
+                            <span class="lose-result">LOSE</span>
+                            {% endif %}
+                            ({{ result.league }})
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-6 content-roster">
+                    <h1>roster</h1>
+
+                    {% for member in site.data.roster %}
+                    <div>
+                        <span>{{ member.handle }} <img class="flag" src="{{ member.flag }}"></span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </body>
 </html>
