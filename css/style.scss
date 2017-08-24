@@ -7,7 +7,7 @@ html {
 }
 
 h1 {
-  color:#bd4bff;
+  color:#925eb0;
 }
 
 // ---
@@ -18,9 +18,14 @@ h1 {
   margin: 0 auto;
 }
 
-.ascii-title {
-  text-align: center;
+.header {
   margin: 1em;
+}
+
+.header img {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
 }
 
 .win-result {
@@ -29,4 +34,8 @@ h1 {
 
 .lose-result {
   color: red;
+}
+
+li {
+  font-size: 16px;
 }
